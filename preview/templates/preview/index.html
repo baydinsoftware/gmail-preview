@@ -1,12 +1,12 @@
 
 
 {% if email_list %}
-	<ul>
-	{% for email in email_list %}
-	<li><a href={% url 'preview:detail' email.pk %}>{{ email.subject }}</a></li> 
-	{% endfor %}
-	</ul>
+    <ul>
+    {% for email in email_list %}
+    <li><a href={% url 'preview:detail' email.pk %}>{{ email.subject }}</a></li> 
+    {% endfor %}
+    </ul>
 
 {% else %}
-	No previews here.
+    No previews here.
 {% endif %}
