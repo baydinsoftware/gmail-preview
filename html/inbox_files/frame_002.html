@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><meta http-equiv="X-UA-Compatible" content="IE=Edge"> <style type="text/css">
+html,body {
+  height:100%;
+  margin:0px;
+  padding:0px;
+  border:none;
+  overflow:hidden;
+}
+td,div {
+  font-family: arial,sans-serif;
+}
+</style><link href="frame_data/rsAItRSTNjmUZCv7toU6iKlqyQ_ozeW0qSrQ.css" rel="stylesheet" type="text/css" id="default_css"><script async="" src="frame_data_002/cbgapi.loaded_0"></script><script gapi_processed="true" src="frame_data_002/client.js"></script></head> <body onload="init()"> <script type="text/javascript">
+    function init() {
+      
+      var frameType = window.location.hash[1];
+
+      var callbackWindow;
+
+      switch (frameType) {
+        case "t":
+          callbackWindow = window.parent.opener;
+          break;
+        case "p":
+          callbackWindow = window.top.opener.frames[
+              "gtn-roster-iframe-id"];
+          break;
+        case "e":
+          callbackWindow = window.parent.frames[
+              "gtn-roster-iframe-id"];
+          break;
+        case "n":
+          callbackWindow = null;
+          break;
+        default:
+          throw Error('Unknown frame type: ' + frameType);
+      }
+
+      if (callbackWindow != null) {
+        callbackWindow['_GC_OnFrameReady'](window);
+      }
+    }
+  </script><iframe src="frame_data_002/proxy.html" style="width: 1px; height: 1px; position: absolute; top: -100px;" name="apiproxy660c23cd645c09f9c53f0ca75deb6b02c2140d3c0.266044349532666" id="apiproxy660c23cd645c09f9c53f0ca75deb6b02c2140d3c0.266044349532666"></iframe></body></html>
