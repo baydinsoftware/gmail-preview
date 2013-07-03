@@ -6,9 +6,13 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
 from preview.models import Preview, Comment
 
+
+# for login_required decorator
+login_url = '/preview/login'
 
 class PreviewForm(ModelForm):
     """ Use for creating/editing email previews."""
@@ -23,7 +27,6 @@ class CommentForm(ModelForm):
         fields = ['comment']
 
 
-
 class IndexView(generic.ListView):
     """ Main view for existing previews."""
     # model = Email  ## don't need this with the get_queryset method
@@ -34,6 +37,8 @@ class IndexView(generic.ListView):
         # filter this later...
         return Preview.objects.all()
 
+
+@login_required(login_url=login_url)
 def detail(request, pk):
     """ View of a Preview and associated comments. Accepts new comments."""
 
@@ -46,6 +51,7 @@ def detail(request, pk):
             new_comment = comment_form.save(commit=False)
             new_comment.date = timezone.now()
             new_comment.preview = preview
+            new_comment.commentor = request.user
             # add user information too? ... depends on auth system?
             new_comment.save()
             
@@ -62,17 +68,21 @@ def detail(request, pk):
     }
     return render(request, 'preview/detail.html', context)
 
+
+@login_required(login_url=login_url)
 def new(request):
     """ Form fields for creating/editing a Preview db entry
 
     Todo: implement active jQuery update of gmail repr.
     """
-
+    
     if request.method == 'POST':
         # fill
         form = PreviewForm(request.POST)
         if form.is_valid():
-            new_preview = form.save()
+            new_preview = form.save(commit=False)
+            new_preview.creator = request.user
+            new_preview.save()
             # --> created preview
             return HttpResponseRedirect(reverse('preview:detail', 
                 kwargs={'pk': new_preview.id}))
