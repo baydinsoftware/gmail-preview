@@ -2,7 +2,7 @@
 from django.db import models
 
 
-class Email(models.Model):
+class Preview(models.Model):
 
     """ Preview information of an email. 
 
@@ -25,8 +25,9 @@ class Comment(models.Model):
     authentication system? 
 
     """
-
-    email = models.ForeignKey(Email)
+    
+    ## change this field to 'preview' - sync tables
+    preview = models.ForeignKey(Preview)
     comment = models.CharField(max_length=480)
     date = models.DateTimeField()
 

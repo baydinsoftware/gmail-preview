@@ -1,8 +1,29 @@
 
 
 
-{# need gmail jquery magic here #}
+{# need gmail template magic here #}
+{# inherit from a template created in the gmail html? #}
 
 <p>Subject: {{ preview_object.subject }}</p>
 <p>Body: {{ preview_object.body }}</p>
+
+{# comments #}
+
+{% if comments %}
+<ul>
+  {% for comment in comments %}
+  <li>{{ comment.comment }}</li>
+  {% endfor %}
+</ul>
+
+{% else %}
+  <p> No comments on this post </p>
+{% endif %}
+
+<form action={% url 'preview:detail' preview_object.id %} method="post">
+  {% csrf_token %}
+  {{ comment_form.as_p }}
+  <input type="submit" value="Comment">
+</form>
+
 

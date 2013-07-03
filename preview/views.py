@@ -2,18 +2,26 @@
 
 from django.views import generic
 from django.forms import ModelForm
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.utils import timezone
 
-from preview.models import Email
+from preview.models import Preview, Comment
 
 
 class PreviewForm(ModelForm):
     """ Use for creating/editing email previews."""
     class Meta:
-        model = Email
+        model = Preview
         fields = ['sender', 'subject', 'body', 'date']
+
+class CommentForm(ModelForm):
+    """ For adding comments to a Preview."""
+    class Meta:
+        model = Comment
+        fields = ['comment']
+
 
 
 class IndexView(generic.ListView):
@@ -24,15 +32,35 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         # filter this later...
-        return Email.objects.all()
+        return Preview.objects.all()
 
+def detail(request, pk):
+    """ View of a Preview and associated comments. Accepts new comments."""
 
-class DetailView(generic.DetailView):
+    preview = get_object_or_404(Preview, pk=pk)
 
-    model = Email
-    template_name = 'preview/detail.html'
-    context_object_name = 'preview_object'
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            # don't commit until we've set up the non-user input fields
+            new_comment = comment_form.save(commit=False)
+            new_comment.date = timezone.now()
+            new_comment.preview = preview
+            # add user information too? ... depends on auth system?
+            new_comment.save()
+            
+            return HttpResponseRedirect(reverse('preview:detail', 
+                                                kwargs={'pk': pk}))
+    else:
+        comment_form = CommentForm()
 
+    comments = Comment.objects.filter(preview=preview)
+    context = {
+        'preview_object': preview,
+        'comments': comments,
+        'comment_form': comment_form
+    }
+    return render(request, 'preview/detail.html', context)
 
 def new(request):
     """ Form fields for creating/editing a Preview db entry
@@ -48,7 +76,6 @@ def new(request):
             # --> created preview
             return HttpResponseRedirect(reverse('preview:detail', 
                 kwargs={'pk': new_preview.id}))
-
     else:
         # empty form
         form = PreviewForm()

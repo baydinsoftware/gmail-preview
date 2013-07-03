@@ -2,6 +2,7 @@
 
 from django.contrib import admin
 
-from preview.models import Email
+from preview.models import Preview, Comment
 
-admin.site.register(Email)
+admin.site.register(Preview)
+admin.site.register(Comment)
