@@ -91,3 +91,9 @@ def new(request):
         form = PreviewForm()
 
     return render(request, 'preview/new.html', {'form': form})
+
+
+def gmail(request):
+
+    return render(request, 'preview/gmail_inbox.html')
+
