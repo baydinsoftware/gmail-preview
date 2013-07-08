@@ -64,7 +64,7 @@ def detail(request, pk):
     context = {
         'preview_object': preview,
         'comments': comments,
-        'comment_form': comment_form
+        'comment_form': comment_form,
     }
     return render(request, 'preview/detail.html', context)
 
