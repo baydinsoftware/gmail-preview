@@ -66,7 +66,7 @@ def detail(request, pk):
         'comments': comments,
         'comment_form': comment_form,
     }
-    return render(request, 'preview/detail.html', context)
+    return render(request, 'preview/gmail_preview.html', context)
 
 
 @login_required(login_url=login_url)
