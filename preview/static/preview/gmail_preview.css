@@ -1,0 +1,14 @@
+
+
+#preview 
+{
+    height: 400px;
+    position: relative;
+    z-index: -1;
+}
+
+#comments 
+{
+    z-index: 2;
+}
+
