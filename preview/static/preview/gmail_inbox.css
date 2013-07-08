@@ -1,16 +1,40 @@
 
+/* top navigation links / search bar */
+#gb 
+{
+    display: none;
+}
+
+div.Tm.aeJ
+{
+    overflow-y: hidden ; /* hide inbox scroll bar */
+}
+
+/* bottom navigation/ stats */
+div.aeG 
+{
+    display: none;
+}
+
+/* left sidebar */
 div.nH.oy8Mbf.nn.aeN 
 {
-/*    display: none;*/
-n}
+}
 
-div.mq /* inbox ad */
+/* left sidebar chat box */
+div.akc.lKgBkb 
+{
+    display: none;
+}
+
+/* inbox ad */
+div.mq 
 {
     display: none;
 }
 
 
-div.Cp
+#\:p9
 {
-
+    display: none;
 }

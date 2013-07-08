@@ -95,5 +95,5 @@ def new(request):
 
 def gmail(request):
 
-    return render(request, 'preview/gmail_inbox.html')
+    return render(request, 'preview/gmail_preview.html')
 
