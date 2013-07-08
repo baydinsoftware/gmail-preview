@@ -1,2 +1,9 @@
+{% extends "preview/base.html" %}
 
-{% include "preview/gmail_inbox.html" %}
+{% block header_content %}
+{% include "preview/gmail_inbox_header.html" %}
+{% endblock %}
+
+{% block body %}
+{% include "preview/gmail_inbox_body.html" %}
+{% endblock %}
