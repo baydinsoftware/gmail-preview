@@ -1,4 +1,7 @@
 
+{% extends "preview/base.html" %}
+
+{% block content %}
 
 {% if email_list %}
     <ul>
@@ -10,3 +13,5 @@
 {% else %}
     No previews here.
 {% endif %}
+
+{% endblock %}

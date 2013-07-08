@@ -12,6 +12,8 @@ urlpatterns = patterns('',
         {'template_name': 'preview/login.html'}, name='login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout', 
         {'template_name': 'preview/logout.html'}, name='logout'),
+    url(r'^reset/$', 'django.contrib.auth.views.password_reset', 
+        {'template_name': 'preview/reset.html'}, name='reset'),
     url(r'^gmail/$', views.gmail, name='gmail'),
     #url(r'^register/$', views.register, name='register'),
 )

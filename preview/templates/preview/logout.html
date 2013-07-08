@@ -1,5 +1,11 @@
- 
 
-<p>You have been logged out.<p>
+{% extends "preview/base.html" %} 
+
+{% block content %}
+<p>You have been logged out.</p>
 
 <p><a href={% url 'preview:index' %}>Home.</a></p>
+{% endblock %}
+
+{% block page_footer %}
+{% endblock %}
