@@ -4,6 +4,7 @@
 
 body {
     font-family: Arial, san-serif;
+    overflow-y: scroll;
 }
 
 #page-title-block {
@@ -46,11 +47,12 @@ body {
     font-size: 28pt;
     font-weight: bold;
 }
+/*
 
 #page-footer-block {
     background-color: black;
     color: white;
-    height: 20pt;
+    height: 35px;
     padding-top: 10pt;
     position: fixed;
     bottom: 0;
@@ -66,10 +68,15 @@ body {
     color: white;
     padding-left: 35px;
 }
+*/
 
 #content {
-    overflow-y: scroll;
+   /* overflow-y: scroll;*/
     margin-top: 100px; /* same as #page-title-block height */
+  
+    margin-bottom: 60px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /*---------------------------------------
@@ -120,22 +127,36 @@ body {
 
 
 #comments {
-    padding-left: 100px;
+    padding-left: 222px;
+    width: 600px;
+    position: relative;
+}
+
+#comments ul {
+    display: inline;
 }
 
 #comments ul li {
     display: block;
-    border-left: 2px solid;
-    padding-top: 20px;
+    border-left: 2px solid; 
+/*    padding-top: 20px;*/
     padding-left: 10px;
+    padding-bottom: 20px;
 }
 
 .comment-body {
     display: block;
+    font-family: Georgia, serif;
+    font-size: 14pt;
+}
+
+.user {
+    font-style: italic;
 }
 
 .comment-details {
     display: block;
     color: #666666;
+    font-size: 12pt;
 }
 
