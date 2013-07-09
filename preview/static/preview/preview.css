@@ -1,0 +1,32 @@
+
+
+#page-title-block 
+{
+   background-color: black;
+   height: 100px;
+}
+
+#page-title-block a
+{
+    text-decoration: none;
+}
+
+#page-title-block a div
+{
+   font-size: 24pt;
+   color: white;
+   padding: 20px 0px 0px 30px;
+}
+
+#preview 
+{
+    height: 400px;
+    position: relative;
+    z-index: -1;
+}
+
+#comments ul li
+{
+    display: block;
+}
+

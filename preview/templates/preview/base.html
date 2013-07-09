@@ -5,14 +5,14 @@
 {% block header_content %} 
 
 {% endblock %}
+<link rel="stylesheet" type="text/css" href="/static/preview/preview.css">
 {% endblock %}
 </head>
 
-
 <body>
 {% block page_header %}
-<div>
-  <a href={% url 'preview:index' %}>Gmail Preview</a>
+<div id="page-title-block">
+  <a href={% url 'preview:index' %}><div>Gmail Preview</div></a>
 </div>
 {% endblock %}
 
