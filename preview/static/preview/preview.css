@@ -1,32 +1,54 @@
 
 
-#page-title-block 
-{
+body {
+    font-family: Arial, san-serif;
+}
+
+#page-title-block {
    background-color: black;
    height: 100px;
 }
 
-#page-title-block a
-{
+#page-title-block a {
     text-decoration: none;
 }
 
-#page-title-block a div
-{
+#page-title-block a div {
    font-size: 24pt;
    color: white;
-   padding: 20px 0px 0px 30px;
+   padding: 40px 0px 0px 30px;
 }
 
-#preview 
-{
+#preview {
     height: 400px;
     position: relative;
     z-index: -1;
 }
 
-#comments ul li
-{
+#comments {
+  
+}
+
+#comments ul li {
     display: block;
 }
 
+
+#page-footer-block {
+    background-color: black; #898989;
+    color: white;
+    height: 20pt;
+    padding-top: 10pt;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#page-footer-block a {
+    text-decoration: none;
+}
+
+#page-footer-block a span {
+    color: white;
+    padding-left: 25px;
+}

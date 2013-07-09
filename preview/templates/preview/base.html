@@ -20,11 +20,13 @@
 {% endblock %}
 
 {% block page_footer %}
-<div>  
+<div id="page-footer-block">  
   {% if user.is_authenticated %}
-  <a href={% url 'preview:logout' %}>Logout</a>
+  <a href={% url 'preview:logout' %}><span>Logout</span></a>
+  {% else %}
+  <a href={% url 'preview:login' %}><span>Login</span></a>
   {% endif %}
-  <a href={% url 'preview:new' %}>New</a>
+  <a href={% url 'preview:new' %}><span>New</span></a>
 </div>
 {% endblock %}
 </body>
