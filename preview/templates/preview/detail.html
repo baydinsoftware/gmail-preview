@@ -5,30 +5,34 @@
 {% endblock %}
 
 {% block content %}
+
   <div id="preview">
     {% include "preview/gmail_inbox_body.html" %}
   </div>
 
   <div id="comments">
-    {% if comments %}
     <ul>
+    {% if comments %}
       {% for comment in comments %}
       <li>
         <div class="comment-body">{{ comment.comment }}</div>
-        <div class="comment-details"> <span class="user">{{ comment.commentor }}</span> <span class="time">at {{ comment.date|date:"g:i a" }} on {{ comment.date|date:"F j" }}</span></div>
+        <div class="comment-details"> 
+          <span class="user">{{ comment.commentor }}</span> 
+          <span class="time">at {{ comment.date|date:"g:i a" }} on {{ comment.date|date:"F j" }}</span>
+        </div>
       </li>
-
       {% endfor %}
 
       {% else %}
-      <li> No comments on this post </li>
+      <li><div class="comment-body">There are no comments on this post.</div></li>
       {% endif %}
-
-      <form action={% url 'preview:detail' preview_object.id %} method="post">
-        {% csrf_token %}
-        {{ comment_form.as_p }}
-        <input type="submit" value="Comment">
-      </form>
     </ul>
+
+    <form action={% url 'preview:detail' preview_object.id %} method="post">
+      {% csrf_token %}
+      {{ comment_form.as_p }}
+      <input type="submit" value="Comment">
+    </form>
+
   </div>
 {% endblock %}
