@@ -1,7 +1,7 @@
 
 
 from django.views import generic
-from django.forms import ModelForm
+from django.forms import ModelForm, Textarea
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -23,9 +23,13 @@ class PreviewForm(ModelForm):
 
 class CommentForm(ModelForm):
     """ For adding comments to a Preview."""
+    
     class Meta:
         model = Comment
         fields = ['comment']
+        widgets = {
+            'comment': Textarea,
+        }
 
 
 class IndexView(generic.ListView):

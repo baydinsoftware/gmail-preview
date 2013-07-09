@@ -159,3 +159,26 @@ body {
     font-size: 12pt;
 }
 
+#comments form p label {
+    display: none;
+}
+
+#comments form p textarea {
+    width: 600px;
+    height: 50px;
+}
+
+form input {
+    display: block;
+}
+
+form p span {
+    color: #666666;
+}
+
+.errorlist {
+    list-style-type: none;
+}
+
+
+
