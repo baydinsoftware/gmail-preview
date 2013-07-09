@@ -110,7 +110,7 @@ body {
     padding-top: 1px;
     font-size: 10.5pt;
     color: #666666;
-p}
+}
 
 #preview {
     height: 400px;
@@ -119,11 +119,23 @@ p}
 }
 
 
-
 #comments {
-  
+    padding-left: 100px;
 }
 
 #comments ul li {
     display: block;
+    border-left: 2px solid;
+    padding-top: 20px;
+    padding-left: 10px;
 }
+
+.comment-body {
+    display: block;
+}
+
+.comment-details {
+    display: block;
+    color: #666666;
+}
+
