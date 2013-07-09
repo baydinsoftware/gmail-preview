@@ -7,6 +7,10 @@ body {
 #page-title-block {
    background-color: black;
    height: 100px;
+   width: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
 }
 
 #page-title-block a {
@@ -25,6 +29,11 @@ body {
     z-index: -1;
 }
 
+#content {
+    overflow-y: scroll;
+    margin-top: 100px; /* same as #page-title-block height */
+}
+
 #comments {
   
 }
@@ -39,8 +48,9 @@ body {
     color: white;
     height: 20pt;
     padding-top: 10pt;
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
 }
 
@@ -50,5 +60,5 @@ body {
 
 #page-footer-block a span {
     color: white;
-    padding-left: 25px;
+    padding-left: 35px;
 }

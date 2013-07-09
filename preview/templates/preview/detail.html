@@ -5,30 +5,30 @@
 {% endblock %}
 
 {% block content %}
-<div id="preview">
-  {% include "preview/gmail_inbox_body.html" %}
-</div>
+  <div id="preview">
+    {% include "preview/gmail_inbox_body.html" %}
+  </div>
 
-<div id="comments">
-  {% if comments %}
-  <ul>
-    {% for comment in comments %}
-    <li>
-      <div class="comment-body">{{ comment.comment }}</div>
-      <div class="comment-details">by <span class="user">{{ comment.commentor }}</span> <span class="time">at {{ comment.date|date:"g:i a" }} on {{ comment.date|date:"F j" }}</span></span>
-    </li>
+  <div id="comments">
+    {% if comments %}
+    <ul>
+      {% for comment in comments %}
+      <li>
+        <div class="comment-body">{{ comment.comment }}</div>
+        <div class="comment-details">by <span class="user">{{ comment.commentor }}</span> <span class="time">at {{ comment.date|date:"g:i a" }} on {{ comment.date|date:"F j" }}</span>
+      </li>
 
-    {% endfor %}
+      {% endfor %}
 
-    {% else %}
-    <li> No comments on this post </li>
-    {% endif %}
+      {% else %}
+      <li> No comments on this post </li>
+      {% endif %}
 
-    <form action={% url 'preview:detail' preview_object.id %} method="post">
-      {% csrf_token %}
-      {{ comment_form.as_p }}
-      <input type="submit" value="Comment">
-    </form>
-  </ul>
-</div>
+      <form action={% url 'preview:detail' preview_object.id %} method="post">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <input type="submit" value="Comment">
+      </form>
+    </ul>
+  </div>
 {% endblock %}
