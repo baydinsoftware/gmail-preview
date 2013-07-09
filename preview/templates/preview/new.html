@@ -2,10 +2,12 @@
 {% extends "preview/base.html" %}
 
 {% block content %}
-<form action={% url 'preview:new' %} method="post"> 
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" value="Submit">
-</form>
+<div id="new-form">
+  <form action={% url 'preview:new' %} method="post"> 
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+  </form>
+</div>
 
 {% endblock %}

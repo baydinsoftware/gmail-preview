@@ -1,0 +1,16 @@
+
+
+
+{% extends "preview/base.html" %}
+
+{% block content %}
+
+<div id="register-form">
+  <form action={% url 'preview:register' %} method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Register">
+  </form>
+</div>
+                                                   
+{% endblock %}

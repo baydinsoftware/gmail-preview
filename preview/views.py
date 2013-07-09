@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
 
 from preview.models import Preview, Comment
 
@@ -71,10 +72,7 @@ def detail(request, pk):
 
 @login_required(login_url=login_url)
 def new(request):
-    """ Form fields for creating/editing a Preview db entry
-
-    Todo: implement active jQuery update of gmail repr.
-    """
+    """ Form fields for creating/editing a Preview db entry. """
     
     if request.method == 'POST':
         # fill
@@ -93,7 +91,16 @@ def new(request):
     return render(request, 'preview/new.html', {'form': form})
 
 
-def gmail(request):
+def register(request):
+    """ Form for registering a new User."""
 
-    return render(request, 'preview/gmail_preview.html')
+    if request.method == 'POST':
+        user_form = UserCreationForm(request.POST)
+        if user_form.is_valid():
+            new_user = form.save()
+            return HttpResponseRedirect(reverse('preview:index')) # change this to use 'next' field
 
+    else:
+        form = UserCreationForm()
+
+    return render(request, 'preview/register.html', {'form': form})
