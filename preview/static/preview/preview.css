@@ -1,5 +1,7 @@
 
 
+/*----- universal styles applied to base.html ------*/
+
 body {
     font-family: Arial, san-serif;
 }
@@ -11,40 +13,42 @@ body {
    position: fixed;
    top: 0;
    left: 0;
+   list-style-type: none;
+   margin: 0;
+   
 }
 
-#page-title-block a {
+#page-title-block li {
+    display: inline;
+    padding-top: 30px;
+}
+
+#page-title-block li a {
     text-decoration: none;
+    color: white;
 }
 
-#page-title-block a div {
-   font-size: 24pt;
-   color: white;
-   padding: 40px 0px 0px 30px;
+.nav {
+    float: right;
+    font-size: 14pt;
+    font-weight: bold;
 }
 
-#preview {
-    height: 400px;
-    position: relative;
-    z-index: -1;
-}
-
-#content {
-    overflow-y: scroll;
-    margin-top: 100px; /* same as #page-title-block height */
-}
-
-#comments {
-  
-}
-
-#comments ul li {
+.nav a {
     display: block;
+    padding-top: 15px;
+    padding-right: 100px;
 }
 
+
+#title {
+    float: left;
+    font-size: 28pt;
+    font-weight: bold;
+}
 
 #page-footer-block {
-    background-color: black; #898989;
+    background-color: black;
     color: white;
     height: 20pt;
     padding-top: 10pt;
@@ -61,4 +65,65 @@ body {
 #page-footer-block a span {
     color: white;
     padding-left: 35px;
+}
+
+#content {
+    overflow-y: scroll;
+    margin-top: 100px; /* same as #page-title-block height */
+}
+
+/*---------------------------------------
+-------------page specific styling-------
+--------------------------------------*/
+
+/*---------index page------*/
+#index-list {
+   padding-left: 100px;
+
+}
+    
+#index-list li {
+    padding-top: 20px;
+    padding-left: 10px;
+    border-left: 2px solid;
+    display: block;
+}
+
+#index-list li a {
+    color: black;
+    text-decoration: none;
+} 
+
+#index-list li a span.subject {
+    display: block;
+    font-size: 18pt;
+    font-family: Georgia, serif;
+}
+
+#index-list li a span.body {
+    font-style: italic;
+    color: #8c8c8c;
+}
+
+#index-list li span.creator {
+    display: block;
+    padding-top: 1px;
+    font-size: 10.5pt;
+    color: #666666;
+p}
+
+#preview {
+    height: 400px;
+    position: relative;
+    z-index: -1;
+}
+
+
+
+#comments {
+  
+}
+
+#comments ul li {
+    display: block;
 }

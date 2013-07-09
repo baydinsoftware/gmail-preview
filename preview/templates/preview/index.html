@@ -2,11 +2,14 @@
 {% extends "preview/base.html" %}
 
 {% block content %}
-
+<div id="preview-explanation">
+  <h3>Welcome to the Gmail Preview!</h3>
+</div>
 {% if email_list %}
-    <ul>
+    <ul id="index-list">
     {% for email in email_list %}
-    <li><a href={% url 'preview:detail' email.pk %}>{{ email.subject }}</a></li> 
+    <li><a href={% url 'preview:detail' email.pk %}><span class="subject">{{ email.subject }}</span><span class="body">{{ email.body }}</span></a>
+      <span class="creator">Created by <em>{{ email.creator }}</em></span></li> 
     {% endfor %}
     </ul>
 
