@@ -30,7 +30,7 @@ body {
 }
 
 .nav {
-    float: right;
+    float: left;
     font-size: 14pt;
     font-weight: bold;
 }
@@ -38,14 +38,14 @@ body {
 .nav a {
     display: block;
     padding-top: 15px;
-    padding-right: 100px;
+    padding-left: 40px;
 }
-
 
 #title {
     float: left;
     font-size: 28pt;
     font-weight: bold;
+    padding-left: 60px;
 }
 /*
 
@@ -110,15 +110,14 @@ form p label {
 /*---------index page------*/
 
 #preview-explanation {
-    margin-top: 150px;
+    margin-top: 160px;
     width: 700px;
 }
 
 #preview-explanation h2 {
-    padding-top: 10px;
+    padding-top: 20px;
     font-weight: bold;
     font-size: 20pt;
-    text-decoration: underline;
 }
 
 #index-list {
@@ -226,6 +225,7 @@ form p label {
     font-size: 12pt;
 }
 
-#registration form input {
+#registration-form form input {
     font-size: 12pt;
 }
+

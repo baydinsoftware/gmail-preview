@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<div id="register-form">
+<div id="registration-form" class="basic-content-margins">
   <form action={% url 'preview:register' %} method="post">
     {% csrf_token %}
     {{ form.as_p }}
