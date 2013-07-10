@@ -35,7 +35,7 @@ class CommentForm(ModelForm):
 
 class IndexView(generic.ListView):
     """ Main view for existing previews."""
-    # model = Email  ## don't need this with the get_queryset method
+
     template_name = 'preview/index.html'
     context_object_name = 'email_list'
 
@@ -109,8 +109,7 @@ def register(request):
             if user is not None:
                 login(request, user)
             # else error - but that should never happen
-            return HttpResponseRedirect(reverse('preview:index')) # change this to use 'next' field
-
+            return HttpResponseRedirect(reverse('preview:index')) 
     else:
         user_form = UserCreationForm()
 
