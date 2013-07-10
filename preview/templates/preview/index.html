@@ -2,9 +2,10 @@
 {% extends "preview/base.html" %}
 
 {% block content %}
-<div id="preview-explanation">
-  <h3>Welcome to the Gmail Preview!</h3>
-  <p> A tool for 
+<div id="preview-explanation" class="basic-content-margins">
+  <p> A tool for checking how the subject line and message body of an email will appear in the Gmail inbox. <a class="inline-link"href={% url 'preview:login' %}>Login</a> to create new emails, check out previews created by other users, and leave comments.
+</p>
+<h2>Recent Previews:</h2>
 </div>
 {% if email_list %}
     <ul id="index-list">

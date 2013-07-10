@@ -4,7 +4,7 @@
 
 body {
     font-family: Arial, san-serif;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 #page-title-block {
@@ -96,14 +96,38 @@ form p label {
 -------------page specific styling-------
 --------------------------------------*/
 
+
+.basic-content-margins {
+  margin: 200px 0px 0px 100px;   
+}
+
+.inline-link {
+    color: #666666;
+    text-decoration: none;
+}
+
+
 /*---------index page------*/
+
+#preview-explanation {
+    margin-top: 150px;
+    width: 700px;
+}
+
+#preview-explanation h2 {
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 20pt;
+    text-decoration: underline;
+}
+
 #index-list {
    padding-left: 100px;
-
+   width: 600px;
 }
     
 #index-list li {
-    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 10px;
     border-left: 2px solid;
     display: block;
@@ -124,6 +148,7 @@ form p label {
     font-style: italic;
     color: #8c8c8c;
 }
+
 
 #index-list li span.creator {
     display: block;
@@ -146,12 +171,13 @@ form p label {
 }
 
 #comments ul {
+
     display: inline; /* get rid of this to see funky border extension (firefox)*/
 }
 
 #comments ul li {
     display: block;
-    border-left: 2px solid; 
+    border-left: 2px solid;  
     padding-left: 10px;
     padding-bottom: 20px;
 }
@@ -185,15 +211,10 @@ form p label {
     list-style-type: none;
 }
 
-
 #new-form-description {
     font-family: Georgia, serif;
     font-size: 14pt;
 }
-
-#new-form-description h3 {
-}
-    
 
 #new-form {
     /*border-top: 2px solid;*/
@@ -205,11 +226,6 @@ form p label {
     font-size: 12pt;
 }
 
-.basic-content-margins {
-  margin: 200px 0px 0px 100px;   
-}
-
-.inline-link {
-    color: #666666;
-    text-decoration: none;
+#registration form input {
+    font-size: 12pt;
 }
