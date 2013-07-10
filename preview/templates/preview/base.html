@@ -14,8 +14,8 @@
 <ul id="page-title-block">
   <li id="title"><a href={% url 'preview:index' %}><span>Gmail Preview</span></a></li>
  {% if user.is_authenticated %}
-  <li class="nav"><a href={% url 'preview:logout' %}>Logout</a></li>
   <li class="nav"><a href={% url 'preview:new' %}>New</a></li>
+  <li class="nav"><a href={% url 'preview:logout' %}>Logout</a></li>
   {% else %}
   <li class="nav"><a href={% url 'preview:login' %}>Login</a></li>
   {% endif %}
