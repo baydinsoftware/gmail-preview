@@ -59,6 +59,7 @@ body {
 
 form input {
     display: block; /* labels above fields */
+    font-size: 12pt;
 }
 
 form p span {
@@ -69,11 +70,6 @@ form p label {
     font-family: Georgia, serif;
 }
 
-/*---------------------------------------
--------------page specific styling-------
---------------------------------------*/
-
-
 .basic-content-margins {
   margin: 200px 0px 0px 100px;   
 }
@@ -82,6 +78,14 @@ form p label {
     color: #666666;
     text-decoration: none;
 }
+
+.errorlist {
+    list-style-type: none;
+}
+
+/*---------------------------------------
+-------------page specific styling-------
+--------------------------------------*/
 
 
 /*---------index page------*/
@@ -125,7 +129,6 @@ form p label {
     color: #8c8c8c;
 }
 
-
 #index-list li span.creator {
     display: block;
     padding-top: 1px;
@@ -133,12 +136,13 @@ form p label {
     color: #666666;
 }
 
+/*-----detail page---------*/
+
 #preview {
     height: 400px;
     position: relative;
     z-index: -1;
 }
-
 
 #comments {
     padding-left: 222px;
@@ -147,7 +151,6 @@ form p label {
 }
 
 #comments ul {
-
     display: inline; /* get rid of this to see funky border extension (firefox)*/
 }
 
@@ -159,7 +162,7 @@ form p label {
 }
 
 .comment-body {
-    display: block;
+p    display: block;
     font-family: Georgia, serif;
     font-size: 14pt;
 }
@@ -183,9 +186,7 @@ form p label {
     height: 50px;
 }
 
-.errorlist {
-    list-style-type: none;
-}
+/*-------new preview page --------*/
 
 #new-form-description {
     font-family: Georgia, serif;
@@ -198,11 +199,5 @@ form p label {
     width: 200px;
 }
 
-#new-form form input {
-    font-size: 12pt;
-}
 
-#registration-form form input {
-    font-size: 12pt;
-}
 
