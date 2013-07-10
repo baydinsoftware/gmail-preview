@@ -20,7 +20,7 @@ class PreviewForm(ModelForm):
     """ Use for creating/editing email previews."""
     class Meta:
         model = Preview
-        fields = ['sender', 'subject', 'body', 'date']
+        fields = ['sender', 'subject', 'body']
 
 class CommentForm(ModelForm):
     """ For adding comments to a Preview."""
@@ -84,6 +84,7 @@ def new(request):
         if form.is_valid():
             new_preview = form.save(commit=False)
             new_preview.creator = request.user
+            new_preview.date = timezone.now()
             new_preview.save()
             # --> created preview
             return HttpResponseRedirect(reverse('preview:detail', 

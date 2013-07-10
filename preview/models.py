@@ -4,17 +4,12 @@ from django.contrib.auth.models import User
 
 
 class Preview(models.Model):
-
-    """ Preview information of an email. 
-
-    Add last_updated field??
-
-    """
+    """ Preview information of an email. """
 
     sender = models.CharField(max_length=120)
     subject = models.CharField(max_length=120)
     body = models.CharField(max_length=480)
-    date = models.DateTimeField()
+    date = models.DateTimeField() # date created by creator.
     creator = models.ForeignKey(User)
 
     def __unicode__(self):
