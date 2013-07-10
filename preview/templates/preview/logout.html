@@ -2,9 +2,9 @@
 {% extends "preview/base.html" %} 
 
 {% block content %}
-<div id="logged-out">
+<div id="logged-out" class="basic-content-margins">
   <p>You have been logged out.</p>
-  <p>Click <a href={% url 'preview:index' %}>here</a> to return to the index, or <a href={% url 'preview:login' %}>login</a> again.</p>
+  <p>Click <a class="inline-link" href={% url 'preview:index' %}>here</a> to return to the home page, or <a class="inline-link" href={% url 'preview:login' %}>login</a> again.</p>
 </div>
 {% endblock %}
 

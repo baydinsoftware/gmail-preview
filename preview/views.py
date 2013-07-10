@@ -6,6 +6,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.utils import timezone
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 
@@ -101,10 +102,16 @@ def register(request):
     if request.method == 'POST':
         user_form = UserCreationForm(request.POST)
         if user_form.is_valid():
-            new_user = form.save()
+            new_user = user_form.save()
+            # login the user
+            user = authenticate(username=request.POST['username'], 
+                                password=request.POST['password1'])
+            if user is not None:
+                login(request, user)
+            # else error - but that should never happen
             return HttpResponseRedirect(reverse('preview:index')) # change this to use 'next' field
 
     else:
-        form = UserCreationForm()
+        user_form = UserCreationForm()
 
-    return render(request, 'preview/register.html', {'form': form})
+    return render(request, 'preview/register.html', {'form': user_form})

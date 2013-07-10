@@ -185,10 +185,6 @@ form p label {
     list-style-type: none;
 }
 
-#new {
-    margin: 200px 0px 0px 100px;
-
-}
 
 #new-form-description {
     font-family: Georgia, serif;
@@ -209,11 +205,11 @@ form p label {
     font-size: 12pt;
 }
 
-#logged-out {
-   margin: 200px 0px 0px 100px;   
+.basic-content-margins {
+  margin: 200px 0px 0px 100px;   
 }
 
-#logged-out p a {
+.inline-link {
     color: #666666;
     text-decoration: none;
 }
