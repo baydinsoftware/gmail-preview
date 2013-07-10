@@ -2,12 +2,20 @@
 {% extends "preview/base.html" %}
 
 {% block content %}
-<div id="new-form">
-  <form action={% url 'preview:new' %} method="post"> 
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
-  </form>
-</div>
+<div id="new"> 
 
+  <div id="new-form-description">
+    <h3>New Preview</h3>
+    Use this form to create a sample email for your previewing pleasure.
+  </div>
+
+  <div id="new-form">
+    <form action={% url 'preview:new' %} method="post"> 
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Preview">
+    </form>
+  </div>
+
+</div>
 {% endblock %}
