@@ -40,8 +40,7 @@ class IndexView(generic.ListView):
     context_object_name = 'email_list'
 
     def get_queryset(self):
-        # filter this later...
-        return Preview.objects.all()
+        return Preview.objects.all().order_by('-date')
 
 
 @login_required(login_url=login_url)
