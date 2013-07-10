@@ -7,6 +7,11 @@ body {
     overflow-y: auto;
 }
 
+p {
+    font-family: Georgia, serif;
+    font-size: 13pt;
+}
+
 #page-title-block {
    background-color: black;
    height: 100px;
@@ -68,6 +73,7 @@ form p span {
 
 form p label {
     font-family: Georgia, serif;
+    font-size: 12pt;
 }
 
 .basic-content-margins {
@@ -120,18 +126,18 @@ form p label {
 
 #index-list li a span.subject {
     display: block;
-    font-size: 18pt;
+    font-size: 14pt;
     font-family: Georgia, serif;
 }
 
 #index-list li a span.body {
     font-style: italic;
+    font-size: 11pt;
     color: #8c8c8c;
 }
 
 #index-list li span.creator {
     display: block;
-    padding-top: 1px;
     font-size: 10.5pt;
     color: #666666;
 }
@@ -162,9 +168,9 @@ form p label {
 }
 
 .comment-body {
-p    display: block;
+    display: block;
     font-family: Georgia, serif;
-    font-size: 14pt;
+    font-size: 12pt;
 }
 
 .user {
@@ -174,7 +180,7 @@ p    display: block;
 .comment-details {
     display: block;
     color: #666666;
-    font-size: 12pt;
+    font-size: 11pt;
 }
 
 #comments form p label {
@@ -188,9 +194,8 @@ p    display: block;
 
 /*-------new preview page --------*/
 
-#new-form-description {
+#new-form-description h3 {
     font-family: Georgia, serif;
-    font-size: 14pt;
 }
 
 #new-form {
@@ -198,6 +203,4 @@ p    display: block;
     margin-top: 40px;
     width: 200px;
 }
-
-
 

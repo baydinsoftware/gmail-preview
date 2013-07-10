@@ -2,7 +2,7 @@
 {% extends "preview/base.html" %}
 
 {% block content %}
-<div id="registration" class="basic-content-margins">
+<div id="login" class="basic-content-margins">
   <form method="post" action="{% url 'preview:login' %}">
     {% csrf_token %}
     {{ form.as_p }}
